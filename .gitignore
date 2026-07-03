@@ -1,0 +1,13 @@
+.obsidian/workspace.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Operating system files
+.DS_Store
+Thumbs.db
