@@ -11,3 +11,8 @@ venv/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Personal Notes
+/New Roads/
+/Roadmap 180 days/
+/Roadmap B/
