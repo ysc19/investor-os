@@ -1,46 +1,63 @@
 # Stock Data Pipeline
 
-## Overview
+> Investor OS is not being built to predict the market.
+>
+> It is being built to improve the quality of investment decisions through data, finance, software engineering, AI, and disciplined reasoning.
+
+---
+# Overview
 
 The Stock Data Pipeline is the first software component of Investor OS.
 
 Its purpose is to collect, organize, analyze, and visualize stock market data. This project will gradually evolve into a complete market analysis engine capable of supporting investment research, valuation, risk analysis, portfolio management, and AI-assisted decision making.
 
+Every feature added should contribute to making better long-term capital allocation decisions.
+
 ---
+# Current Features
 
-## Current Features
+## Data Collection
 
-### Data Collection
 - Download historical stock data using Yahoo Finance
-- User input for stock ticker
-- Retrieve one month of historical price data
+- User-selected stock ticker
+- Retrieve one month of historical price history
 
-### Basic Analysis
+## Basic Analysis
+
 - Last closing price
 - Highest price
 - Lowest price
 - Average trading volume
 
-### Visualization
+## Feature Engineering
+
+- Daily Return calculation
+- 5-Day Simple Moving Average (SMA)
+
+## Visualization
+
 - Closing price chart
 - Trading volume chart
+- Price + Moving Average chart
+- Combined Price + Volume visualization
 
-### Software Design
+## Software Design
+
 - Modular architecture
 - Reusable functions
-- Separate data retrieval and analysis logic
+- Separate data retrieval from analysis logic
 - Virtual environment configured
 - Dependency management using `requirements.txt`
 
 ---
 
-## Project Structure
+# Project Structure
 
-```
+```text
 Stock Data Pipeline/
 │
 ├── main.py              # User interface
-├── stock.py             # Stock analysis functions
+├── stock.py             # Data collection, analysis, and visualization
 ├── requirements.txt
 ├── README.md
 ├── data/
@@ -49,7 +66,7 @@ Stock Data Pipeline/
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 - Python
 - yfinance
@@ -60,23 +77,49 @@ Stock Data Pipeline/
 
 ---
 
-## Skills Learned
+# Skills Learned
 
-- Creating reusable Python functions
-- Returning values from functions
-- Passing parameters
-- Importing modules
-- Working with DataFrames
-- Using yfinance
-- Creating stock charts
-- Visualizing trading volume
-- Writing cleaner, modular code
+## Python
+
+- Functions
+- Parameters
+- Return values
+- Modules
+- Imports
+
+## Data Analysis
+
+- pandas DataFrames
+- Percentage change (`pct_change`)
+- Rolling window calculations
+
+## Finance
+
+- Historical market data
+- Price statistics
+- Volume analysis
+- Daily returns
+- Moving averages
+
+## Visualization
+
+- Line charts
+- Bar charts
+- Dual-axis charts
+
+## Software Engineering
+
+- Modular programming
+- Git
+- GitHub
+- Project organization
 
 ---
 
-## Roadmap
+# Development Roadmap
 
-### Phase 1 — Data Pipeline
+## Phase 1 — Data Pipeline
+
 - ✅ Download stock data
 - ✅ Price statistics
 - ✅ Volume statistics
@@ -85,29 +128,42 @@ Stock Data Pipeline/
 - ⏳ Custom date ranges
 - ⏳ Multiple time periods
 
-### Phase 2 — Technical Analysis
-- Moving Averages
-- Exponential Moving Averages
-- RSI
-- MACD
-- Bollinger Bands
-- Support & Resistance
-- Candlestick Charts
+---
 
-### Phase 3 — Financial Analysis
+## Phase 2 — Feature Engineering & Technical Analysis
+
+- ✅ Daily Returns
+- ✅ Simple Moving Average (SMA)
+- ⏳ Exponential Moving Average (EMA)
+- ⏳ RSI
+- ⏳ MACD
+- ⏳ Bollinger Bands
+- ⏳ Support & Resistance
+- ⏳ Candlestick Charts
+
+---
+
+## Phase 3 — Financial Analysis
+
 - Income Statement
 - Balance Sheet
 - Cash Flow Statement
 - Financial Ratios
 - Company Fundamentals
 
-### Phase 4 — Valuation
-- Discounted Cash Flow
+---
+
+## Phase 4 — Valuation
+
+- Discounted Cash Flow (DCF)
 - Intrinsic Value
 - Margin of Safety
 - Comparable Company Analysis
 
-### Phase 5 — Macro & Risk
+---
+
+## Phase 5 — Macro & Risk Analysis
+
 - Economic Indicators
 - Interest Rates
 - Inflation
@@ -116,21 +172,30 @@ Stock Data Pipeline/
 - Drawdown
 - Correlation
 
-### Phase 6 — AI Analysis
+---
+
+## Phase 6 — AI Analysis
+
 - AI Company Reports
 - Earnings Call Summaries
-- News Sentiment
+- News Sentiment Analysis
 - Risk Summaries
 - Investment Thesis Generator
 
-### Phase 7 — Portfolio Management
+---
+
+## Phase 7 — Portfolio Management
+
 - Portfolio Tracking
 - Diversification Analysis
 - Portfolio Optimization
 - Performance Attribution
-- Rebalancing
+- Portfolio Rebalancing
 
-### Phase 8 — Investor OS Integration
+---
+
+## Phase 8 — Investor OS Integration
+
 - Automated Research Pipeline
 - Interactive Dashboard
 - Watchlists
@@ -139,14 +204,22 @@ Stock Data Pipeline/
 
 ---
 
-## Mission
+# Mission
 
-This project is not intended to become a trading bot.
+This project is **not** intended to become a trading bot.
 
-Its purpose is to build a professional-grade research engine that improves investment judgment through data, finance, software engineering, artificial intelligence, and systems thinking.
+Its purpose is to build a professional-grade investment research engine that improves investment judgment through:
 
-Every feature added should contribute to making better long-term capital allocation decisions.
+- Finance
+- Software Engineering
+- Artificial Intelligence
+- Systems Thinking
+- Data-Driven Decision Making
+
+The objective is not simply to generate charts.
+
+The objective is to transform raw market data into actionable investment insight and continuously improve long-term capital allocation decisions.
 
 ---
 
-**Status:** Day 2 Complete ✅
+**Status:** Day 3 Complete ✅

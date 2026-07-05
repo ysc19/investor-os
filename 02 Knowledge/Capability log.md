@@ -1,112 +1,134 @@
-## 2026
+# 2026 ## July
 
-### July
+---
 
-## Day 0 — Foundation
+# Day 0 — Foundation
 
-### Environment
+## Environment
 
 ✅ Built Investor OS knowledge vault
-
 ✅ Installed Python
-
 ✅ Installed VS Code
-
 ✅ Installed Git
-
 ✅ Connected GitHub repository
-
 ✅ Made first Git commits
 
 ---
 
-## Day 1 — First Stock Data Pipeline
+# Day 1 — First Stock Data Pipeline
 
-### Python
+## Python
 
-✅ Create and activate virtual environments
+✅ Virtual environments
+✅ Package management (pip)
+✅ Importing libraries
+✅ User input
+✅ Variables
+✅ pandas DataFrames
+✅ DataFrame indexing
+✅ Basic debugging
 
-✅ Install third-party packages using pip
+## Finance
 
-✅ Import Python libraries
-
-✅ Accept user input from the terminal
-
-✅ Store data using variables
-
-✅ Work with pandas DataFrames
-
-✅ Select rows and columns from a DataFrame
-
-✅ Debug simple Python errors
-
-### Finance
-
-✅ Retrieve live stock market data from Yahoo Finance
-
-✅ Analyze one month of historical price data
+✅ Historical stock data
+✅ Yahoo Finance API
+✅ One month price history
 
 ---
 
-## Day 2 — Modular Programming & Visualization
-
-### Software Engineering
-
-✅ Write reusable Python functions
-
-✅ Pass parameters into functions
-
-✅ Return values from functions
-
-✅ Organize code into reusable modules
-
-✅ Import functions between Python files
-
-### Stock Analysis
-
-✅ Calculate last closing price
-
-✅ Calculate highest price
-
-✅ Calculate lowest price
-
-✅ Calculate average trading volume
-
-### Visualization
-
-✅ Plot historical closing prices
-
-✅ Plot trading volume
-
-### Engineering Principles
-
-✅ Understand why modular code is easier to maintain
-
-✅ Separate data collection from analysis logic
-
-✅ Build reusable components instead of one-off scripts
-
-
-
-
-
-----------------------------------------------------------------
-# Current Capabilities
-
-## Python
-- Functions
-- Modules
-- Virtual Environments
-- Packages
-- DataFrames
-- Plotting
-
-## Finance
-- Historical market data retrieval
-- Basic price statistics
-- Volume analysis
+# Day 2 — Modular Programming & Visualization
 
 ## Software Engineering
+
+✅ Functions
+✅ Parameters
+✅ Return values
+✅ Python modules
+✅ Importing modules
+✅ Project organization
+
+## Stock Analysis
+
+✅ Last closing price
+✅ Highest price
+✅ Lowest price
+✅ Average trading volume
+
+## Visualization
+
+✅ Closing price charts
+✅ Volume charts
+
+## Engineering Principles
+
+✅ Separation of concerns
+✅ Reusable components
+✅ Clean architecture
+
+---
+
+# Day 3 — Feature Engineering
+
+## Feature Engineering
+
+✅ Daily returns
+✅ Percentage change (`pct_change()`)
+✅ Rolling windows
+✅ Simple Moving Average (5-Day)
+
+## Visualization
+
+✅ Combined price + moving average chart
+✅ Combined price + volume visualization
+
+## Quantitative Finance
+
+✅ Raw data vs engineered features
+✅ Trend smoothing
+✅ Foundations for technical indicators
+
+## Engineering Principles
+
+✅ Features should be computed once and reused
+✅ Build reusable analytical pipelines
+
+----------------------------------------------------------------
+---
+
+# Overall Capability Summary
+
+## Python
+
+- Variables
+- Functions
+- Modules
+- Imports
+- Virtual Environments
+- Packages
+
+## Data Analysis
+
+- pandas DataFrames
+- Indexing
+- Aggregations
+- Rolling calculations
+
+## Finance
+
+- Historical market data
+- Price statistics
+- Volume analysis
+- Daily returns
+- Moving averages
+
+## Visualization
+
+- Line charts
+- Bar charts
+- Multi-axis charts
+
+## Software Engineering
+
 - Git
 - GitHub
 - Modular programming

@@ -25,12 +25,24 @@ def get_average_volume(data):
 
 
 def plot_closing_price(data):
-    plt.figure(figsize=(10, 5))
-    plt.plot(data.index, data["Close"], marker="o", linestyle="-")
-    plt.title("Closing Price Over Time")
+    plt.figure(figsize=(12, 6))
+    plt.plot(
+        data.index,
+        data["Close"],
+        label="Closing Price",
+        linewidth=2,
+    )
+    plt.plot(
+        data.index,
+        data["5-Day MA"],
+        label="5-Day Moving Average",
+        linewidth=2,
+    )
+    plt.title("Stock Price vs 5-Day Moving Average")
     plt.xlabel("Date")
-    plt.ylabel("Closing Price ($)")
-    plt.grid()
+    plt.ylabel("Price ($)")
+    plt.legend()
+    plt.grid(True)
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
@@ -45,4 +57,36 @@ def plot_volume(data):
     plt.grid()
     plt.xticks(rotation=45)
     plt.tight_layout()
+    plt.show()
+
+
+def add_daily_returns(data):
+    data["Daily Return"] = data["Close"].pct_change()
+    return data
+
+
+def add_moving_average(data):
+    data["5-Day MA"] = data["Close"].rolling(window=5).mean()
+    return data
+
+
+#def plot_price_and_volume(data):
+    fig, ax1 = plt.subplots(figsize=(12, 6))
+
+    ax1.set_xlabel("Date")
+    ax1.set_ylabel("Price ($)", color="tab:blue")
+    ax1.plot(data.index, data["Close"], label="Closing Price", color="tab:blue", linewidth=2)
+    ax1.plot(data.index, data["5-Day MA"], label="5-Day Moving Average", color="tab:orange", linewidth=2)
+    ax1.tick_params(axis="y", labelcolor="tab:blue")
+    ax1.legend(loc="upper left")
+
+    ax2 = ax1.twinx()
+    ax2.set_ylabel("Volume", color="tab:green")
+    ax2.bar(data.index, data["Volume"], alpha=0.3, color="tab:green")
+    ax2.tick_params(axis="y", labelcolor="tab:green")
+
+    plt.title("Stock Price and Volume")
+    fig.tight_layout()
+    plt.grid()
+    plt.xticks(rotation=45)
     plt.show()
