@@ -2,7 +2,7 @@
 
 *A lifelong operating system for developing exceptional investment judgment through finance, software engineering, artificial intelligence, and disciplined research.*
 
-> Every day, add one permanent capability.
+> Every day, adding one permanent capability.
 
 ---
 
