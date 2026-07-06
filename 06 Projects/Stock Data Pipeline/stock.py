@@ -2,9 +2,9 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 
 
-def get_stock_data(ticker):
+def get_stock_data(ticker, period):
     stock = yf.Ticker(ticker)
-    data = stock.history(period="1mo")
+    data = stock.history(period=period)
     return data
 
 
@@ -24,7 +24,7 @@ def get_average_volume(data):
     return data["Volume"].mean()
 
 
-def plot_closing_price(data):
+def plot_price_and_moving_average(data):
     plt.figure(figsize=(12, 6))
     plt.plot(
         data.index,
@@ -71,22 +71,26 @@ def add_moving_average(data):
 
 
 #def plot_price_and_volume(data):
-    fig, ax1 = plt.subplots(figsize=(12, 6))
+    #fig, ax1 = plt.subplots(figsize=(12, 6))
 
-    ax1.set_xlabel("Date")
-    ax1.set_ylabel("Price ($)", color="tab:blue")
-    ax1.plot(data.index, data["Close"], label="Closing Price", color="tab:blue", linewidth=2)
-    ax1.plot(data.index, data["5-Day MA"], label="5-Day Moving Average", color="tab:orange", linewidth=2)
-    ax1.tick_params(axis="y", labelcolor="tab:blue")
-    ax1.legend(loc="upper left")
+    #ax1.set_xlabel("Date")
+    #ax1.set_ylabel("Price ($)", color="tab:blue")
+    #ax1.plot(data.index, data["Close"], label="Closing Price", color="tab:blue", linewidth=2)
+    #ax1.plot(data.index, data["5-Day MA"], label="5-Day Moving Average", color="tab:orange", linewidth=2)
+    #ax1.tick_params(axis="y", labelcolor="tab:blue")
+    #ax1.legend(loc="upper left")
 
-    ax2 = ax1.twinx()
-    ax2.set_ylabel("Volume", color="tab:green")
-    ax2.bar(data.index, data["Volume"], alpha=0.3, color="tab:green")
-    ax2.tick_params(axis="y", labelcolor="tab:green")
+    #ax2 = ax1.twinx()
+    #ax2.set_ylabel("Volume", color="tab:green")
+    #ax2.bar(data.index, data["Volume"], alpha=0.3, color="tab:green")
+    #ax2.tick_params(axis="y", labelcolor="tab:green")
 
-    plt.title("Stock Price and Volume")
-    fig.tight_layout()
-    plt.grid()
-    plt.xticks(rotation=45)
-    plt.show()
+    #plt.title("Stock Price and Volume")
+    #fig.tight_layout()
+    #plt.grid()
+    #plt.xticks(rotation=45)
+    #plt.show()
+
+
+def get_volatility(data):
+    return data["Daily Return"].std()

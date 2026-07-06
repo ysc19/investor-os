@@ -125,7 +125,7 @@ Stock Data Pipeline/
 - ✅ Volume statistics
 - ✅ Price chart
 - ✅ Volume chart
-- ⏳ Custom date ranges
+- ✅Custom date ranges
 - ⏳ Multiple time periods
 
 ---
@@ -222,4 +222,4 @@ The objective is to transform raw market data into actionable investment insight
 
 ---
 
-**Status:** Day 3 Complete ✅
+**Status:** Day 4 Complete ✅

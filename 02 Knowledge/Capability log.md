@@ -92,6 +92,30 @@
 ✅ Features should be computed once and reused
 ✅ Build reusable analytical pipelines
 
+
+## Day 4 — Dynamic Data & Risk Analysis
+
+### Software Engineering
+
+✅ Function parameters
+✅ Configurable program behavior
+✅ User input validation
+✅ Cleaner function naming
+✅ Improved modular design
+
+### Finance
+
+✅ Historical period selection
+✅ Daily return analysis
+✅ Volatility calculation
+✅ Standard deviation
+✅ Risk vs. return concepts
+
+### Data Engineering
+
+✅ Parameterized data retrieval
+✅ Feature engineering using historical prices
+
 ----------------------------------------------------------------
 ---
 
@@ -105,6 +129,10 @@
 - Imports
 - Virtual Environments
 - Packages
+- DataFrames
+- Plotting
+- Rolling Calculations
+- standard deviation
 
 ## Data Analysis
 
@@ -120,6 +148,7 @@
 - Volume analysis
 - Daily returns
 - Moving averages
+- volatility analysis
 
 ## Visualization
 
@@ -133,3 +162,5 @@
 - GitHub
 - Modular programming
 - Project organization
+- Feature Engineering
+- Reusable code design
