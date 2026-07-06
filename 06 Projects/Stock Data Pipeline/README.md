@@ -33,6 +33,8 @@ Every feature added should contribute to making better long-term capital allocat
 
 - Daily Return calculation
 - 5-Day Simple Moving Average (SMA)
+- 5-Day Exponential Moving Average (EMA)  
+- Volatility (Standard Deviation of Daily Returns)
 
 ## Visualization
 
@@ -126,7 +128,7 @@ Stock Data Pipeline/
 - ✅ Price chart
 - ✅ Volume chart
 - ✅Custom date ranges
-- ⏳ Multiple time periods
+- ✅Multiple time periods
 
 ---
 
@@ -134,7 +136,7 @@ Stock Data Pipeline/
 
 - ✅ Daily Returns
 - ✅ Simple Moving Average (SMA)
-- ⏳ Exponential Moving Average (EMA)
+- ✅ Exponential Moving Average (EMA)
 - ⏳ RSI
 - ⏳ MACD
 - ⏳ Bollinger Bands
@@ -222,4 +224,4 @@ The objective is to transform raw market data into actionable investment insight
 
 ---
 
-**Status:** Day 4 Complete ✅
+**Status:** Day 5 Complete ✅

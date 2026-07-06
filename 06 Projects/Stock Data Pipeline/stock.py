@@ -24,7 +24,7 @@ def get_average_volume(data):
     return data["Volume"].mean()
 
 
-def plot_price_and_moving_average(data):
+def plot_technical_analysis(data):
     plt.figure(figsize=(12, 6))
     plt.plot(
         data.index,
@@ -38,7 +38,14 @@ def plot_price_and_moving_average(data):
         label="5-Day Moving Average",
         linewidth=2,
     )
-    plt.title("Stock Price vs 5-Day Moving Average")
+    plt.plot(
+        data.index,
+        data["5-Day EMA"],
+        label="5-Day Exponential Moving Average",
+        linewidth=2,
+    )
+    plt.title("Technical analysis: Price, SMA & EMA")
+    #technical analisys = Stock Price vs 5-Day Moving Average and Exponential Moving Average
     plt.xlabel("Date")
     plt.ylabel("Price ($)")
     plt.legend()
@@ -67,6 +74,11 @@ def add_daily_returns(data):
 
 def add_moving_average(data):
     data["5-Day MA"] = data["Close"].rolling(window=5).mean()
+    return data
+
+
+def add_exponential_moving_average(data):
+    data["5-Day EMA"] = data["Close"].ewm(span=5, adjust=False).mean()
     return data
 
 

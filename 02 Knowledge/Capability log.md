@@ -116,6 +116,21 @@
 ✅ Parameterized data retrieval
 ✅ Feature engineering using historical prices
 
+## Day 5
+
+### Python
+✅ Input validation
+✅ List membership checks
+✅ String joining with join()
+
+### Finance
+✅ Exponential Moving Average (EMA)
+✅ Volatility measurement
+
+### Engineering
+✅ Cleaner API naming
+✅ Improved chart organization
+
 ----------------------------------------------------------------
 ---
 
@@ -140,6 +155,11 @@
 - Indexing
 - Aggregations
 - Rolling calculations
+### Technical Analysis  
+- Daily Returns  
+- 5-Day Simple Moving Average (SMA)  
+- 5-Day Exponential Moving Average (EMA)  
+- Volatility (Standard Deviation of Daily Returns)
 
 ## Finance
 
