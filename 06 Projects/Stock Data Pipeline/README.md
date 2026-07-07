@@ -137,8 +137,8 @@ Stock Data Pipeline/
 - ✅ Daily Returns
 - ✅ Simple Moving Average (SMA)
 - ✅ Exponential Moving Average (EMA)
-- ⏳ RSI
-- ⏳ MACD
+- ✅RSI
+- ✅ MACD
 - ⏳ Bollinger Bands
 - ⏳ Support & Resistance
 - ⏳ Candlestick Charts
@@ -224,4 +224,4 @@ The objective is to transform raw market data into actionable investment insight
 
 ---
 
-**Status:** Day 5 Complete ✅
+**Status:** Day 6 Complete ✅
