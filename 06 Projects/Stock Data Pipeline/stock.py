@@ -44,8 +44,13 @@ def add_exponential_moving_average(data):
     data["5-Day EMA"] = data["Close"].ewm(span=5, adjust=False).mean()
     return data
 
+def add_20_day_moving_average(data):
+    data["20-Day MA"] = data["Close"].rolling(window=20).mean()
+    return data
+
 
 # Momentum Indicators-------------------------------------------
+    # RSI---
 def add_gains(data):
     data["Gain"] = data["Price Change"].clip(lower=0)
     return data
@@ -71,7 +76,7 @@ def add_rsi(data):
     return data
 
 
-# MACD--------------------------------------------------------
+    # MACD---
 def add_macd(data):
     data["12-Day EMA"] = data["Close"].ewm(span=12, adjust=False).mean()
     data["26-Day EMA"] = data["Close"].ewm(span=26, adjust=False).mean()
@@ -86,6 +91,20 @@ def add_signal_line(data):
 
 def add_macd_histogram(data):
     data["MACD Histogram"] = data["MACD"] - data["Signal Line"]
+    return data
+
+
+# Volatility Indicators-------------------------------------------
+def add_standard_deviation(data):
+    data["20-Day Std Dev"] = data["Close"].rolling(window=20).std()
+    return data
+
+def add_upper_bollinger_band(data):
+    data["Upper Bollinger Band"] = data["20-Day MA"] + (data["20-Day Std Dev"] * 2)
+    return data
+
+def add_lower_bollinger_band(data):
+    data["Lower Bollinger Band"] = data["20-Day MA"] - (data["20-Day Std Dev"] * 2)
     return data
 
 
@@ -123,11 +142,40 @@ def plot_technical_dashboard(data):
         label="5-Day EMA",
         linewidth=2
     )
+    ax1.plot(
+        data.index,
+        data["20-Day MA"],
+        label="20-Day SMA",
+        linewidth=2
+    )
+    ax1.plot(
+        data.index,
+        data["Upper Bollinger Band"],
+        label="Upper Bollinger Band",
+        linestyle="--",
+        linewidth=1.5,
+    )
+
+    ax1.plot(
+        data.index,
+        data["Lower Bollinger Band"],
+        label="Lower Bollinger Band",
+        linestyle="--",
+        linewidth=1.5,
+    )
+    ax1.fill_between(
+        data.index,
+        data["Upper Bollinger Band"],
+        data["Lower Bollinger Band"],
+        color="gray",
+        alpha=0.15,
+        label="Bollinger Band Range",
+    )
 
     ax1.set_title("Technical Analysis Dashboard")
     ax1.set_ylabel("Price ($)")
     ax1.grid(True)
-    ax1.legend()
+    ax1.legend(loc="best")
 
     # -----------------------------
     # VOLUME
@@ -159,29 +207,28 @@ def plot_technical_dashboard(data):
         linewidth=2
     )
 
-    ax3.bar(
-        data.index,
-        data["MACD Histogram"],
-        label="Histogram"
-    )
-
     ax3.set_ylabel("MACD")
     ax3.set_xlabel("Date")
     ax3.set_title("MACD")
     ax3.grid(True)
-    ax3.legend()
+    
     colors = [
-    "green" if x >= 0 else "red"
-    for x in data["MACD Histogram"]]
+    "green" if value >= 0 else "red"
+    for value in data["MACD Histogram"]
+    ]
 
     ax3.bar(
     data.index,
     data["MACD Histogram"],
-    color=colors)
-
+    color=colors,
+    label="Histogram"
+    )
+    ax3.legend()
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+
+    
 
 
 def plot_volume(data):

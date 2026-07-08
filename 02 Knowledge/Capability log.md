@@ -153,6 +153,34 @@ Another milestone completed.
 
 - ✅ Professional multi-panel dashboard
 
+## Day 7 — Technical Analysis Dashboard Expansion
+
+Implemented several widely used technical indicators and integrated them into a single dashboard.
+
+### New Features
+- 20-Day Simple Moving Average (SMA)
+- Bollinger Bands
+  - Upper Band
+  - Lower Band
+  - Shaded Band Range
+- MACD
+- Signal Line
+- MACD Histogram
+- Improved technical analysis dashboard layout
+
+### Dashboard now includes
+- Closing Price
+- 5-Day SMA
+- 5-Day EMA
+- 20-Day SMA
+- Bollinger Bands
+- Trading Volume
+- MACD
+- Signal Line
+- MACD Histogram
+
+The project is evolving from a simple stock price visualizer into a reusable technical analysis toolkit.
+
 ----------------------------------------------------------------
 ---
 
@@ -182,6 +210,12 @@ Another milestone completed.
 - 5-Day Simple Moving Average (SMA)  
 - 5-Day Exponential Moving Average (EMA)  
 - Volatility (Standard Deviation of Daily Returns)
+- Implemented RSI
+- Implemented MACD
+- Implemented Signal Line
+- Implemented MACD Histogram
+- Implemented Bollinger Bands
+- Built a multi-panel technical analysis dashboard using Matplotlib
 
 ## Finance
 
