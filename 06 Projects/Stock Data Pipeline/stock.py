@@ -241,3 +241,166 @@ def plot_volume(data):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+
+
+def analyze_trend(data):
+
+    current_price = data["Close"].iloc[-1]
+    moving_average = data["20-Day MA"].iloc[-1]
+
+    difference = (
+        (current_price - moving_average)
+        / moving_average
+    ) * 100
+
+    if difference >= 5:
+        trend = "Very Bullish"
+
+    elif difference >= 1:
+        trend = "Moderately Bullish"
+
+    elif difference >= 0:
+        trend = "Weak Bullish"
+
+    elif difference > -1:
+        trend = "Weak Bearish"
+
+    elif difference > -5:
+        trend = "Strong Bearish"
+
+    else:
+        trend = "Very Strong Bearish"
+
+    return trend, difference
+
+
+def generate_summary(data):
+
+    summary = []
+
+    # ---------------------------------
+    # Trend
+    # ---------------------------------
+    trend, difference = analyze_trend(data)
+
+    summary.append(
+        f"Trend: {trend} ({difference:.2f}% from the 20-Day Moving Average)"
+    )
+
+    # ---------------------------------
+    # RSI
+    # ---------------------------------
+    rsi = data["14-day RSI"].iloc[-1]
+
+    if rsi > 70:
+        summary.append(
+            f"RSI: {rsi:.2f} (Overbought)"
+        )
+
+    elif rsi < 30:
+        summary.append(
+            f"RSI: {rsi:.2f} (Oversold)"
+        )
+
+    else:
+        summary.append(
+            f"RSI: {rsi:.2f} (Neutral)"
+        )
+
+    # ---------------------------------
+    # MACD
+    # ---------------------------------
+    macd = data["MACD"].iloc[-1]
+    signal = data["Signal Line"].iloc[-1]
+
+    if macd > signal:
+        summary.append(
+            "MACD: Bullish momentum"
+        )
+
+    else:
+        summary.append(
+            "MACD: Bearish momentum"
+        )
+
+    # ---------------------------------
+    # Bollinger Bands
+    # ---------------------------------
+    price = data["Close"].iloc[-1]
+    upper = data["Upper Bollinger Band"].iloc[-1]
+    lower = data["Lower Bollinger Band"].iloc[-1]
+
+    if price > upper:
+        summary.append(
+            "Bollinger Bands: Price above the upper band (Possible overbought)"
+        )
+
+    elif price < lower:
+        summary.append(
+            "Bollinger Bands: Price below the lower band (Possible oversold)"
+        )
+
+    else:
+        summary.append(
+            "Bollinger Bands: Price trading inside the bands"
+        )
+
+    return summary
+
+
+def technical_rating(data):
+    score   = 0
+
+    # Trend
+    trend, difference = analyze_trend(data)
+    if trend in ["Very Bullish", "Moderately Bullish"]:
+        score += 2
+    elif trend == "Weak Bullish":
+        score += 1
+    elif trend in ["Weak Bearish", "Strong Bearish"]:
+        score -= 1
+    else:
+        score -= 2
+
+    # RSI
+    rsi = data["14-day RSI"].iloc[-1]
+    if rsi > 70:
+        score -= 2
+    elif rsi < 30:
+        score += 2
+
+    # MACD
+    macd = data["MACD"].iloc[-1]
+    signal = data["Signal Line"].iloc[-1]
+    if macd > signal:
+        score += 1
+    else:
+        score -= 1
+
+    # Bollinger Bands
+    price = data["Close"].iloc[-1]
+    upper = data["Upper Bollinger Band"].iloc[-1]
+    lower = data["Lower Bollinger Band"].iloc[-1]
+    if price > upper:
+        score -= 1
+    elif price < lower:
+        score += 1
+
+    # Calculate score...
+
+    if score >= 3:
+        recommendation = "Strong Buy"
+
+    elif score >= 1:
+        recommendation = "Buy"
+
+    elif score >= -1:
+        recommendation = "Hold"
+
+    elif score >= -3:
+        recommendation = "Sell"
+
+    else:
+        recommendation = "Strong Sell"
+
+    return score, recommendation

@@ -23,7 +23,10 @@ from stock import (
     add_macd_histogram,
     add_standard_deviation,
     add_upper_bollinger_band,
-    add_lower_bollinger_band
+    add_lower_bollinger_band,
+    analyze_trend,
+    generate_summary,
+    technical_rating,
 )
 
 valid_periods = ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
@@ -72,7 +75,9 @@ low = get_low_price(data)
 average_volume = get_average_volume(data)
 plot_technical_dashboard(data)
 volatility = get_volatility(data)
-
+trend, difference = analyze_trend(data)
+summary = generate_summary(data)
+score, recommendation = technical_rating(data)
 
 print(f"Last Close: ${close:.2f}")
 print(f"Highest Price: ${high:.2f}")
@@ -80,3 +85,13 @@ print(f"Lowest Price: ${low:.2f}")
 print(f"Average Volume: {average_volume:.0f}")
 print(data[["Close", "5-Day MA", "5-Day EMA", "14-day RSI", "MACD", "Signal Line", "MACD Histogram", "Upper Bollinger Band", "Lower Bollinger Band"]].tail())
 print(f"Volatility: {volatility:.2%}")
+print(f"Trend Analysis: {trend} ({difference:.2f}%)")
+print("\n==============================")
+print("TECHNICAL SUMMARY")
+print("==============================")
+
+for line in summary:
+    print(line)
+
+print(f"Technical Score: {score}")
+print(f"Recommendation: {recommendation}")
