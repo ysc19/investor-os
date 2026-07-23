@@ -1,3 +1,29 @@
+(My profile:
+> "Investor/operator who combines Wall Street finance, Silicon Valley technology, and AI."
+
+That combination is rare.
+
+My stack:
+### Finance
+
+- Investment banking skills
+- Valuation
+- Accounting
+- Markets
+### Technology
+
+- Python
+- AI
+- Data pipelines
+- Machine learning
+### Investing
+
+- Public markets
+- VC
+- Portfolio management
+)
+
+
 ==**P1-M1 — Master Accounting & Financial Statements==**
 
 
