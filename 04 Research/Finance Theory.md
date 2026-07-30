@@ -387,3 +387,6 @@ This is one equation you'll remember for the rest of your career.
 ## **Assets = Liabilities + Shareholders' Equity**
 
 At first, it looks like a formula.
+
+
+Reading the intelligent investor
