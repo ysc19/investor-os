@@ -390,3 +390,4 @@ At first, it looks like a formula.
 
 
 Reading the intelligent investor
+you tube videos from time street prep.
