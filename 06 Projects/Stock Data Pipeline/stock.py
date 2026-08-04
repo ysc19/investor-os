@@ -404,3 +404,11 @@ def technical_rating(data):
         recommendation = "Strong Sell"
 
     return score, recommendation
+
+#Support and Resistance
+def get_support(data):
+    return data["Low"].rolling(window=20).min().iloc[-1]
+
+
+def get_resistance(data):
+    return data["High"].rolling(window=20).max().iloc[-1]

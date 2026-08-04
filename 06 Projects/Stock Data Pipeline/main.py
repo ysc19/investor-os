@@ -27,6 +27,8 @@ from stock import (
     analyze_trend,
     generate_summary,
     technical_rating,
+    get_support,
+    get_resistance,
 )
 
 valid_periods = ["1d", "5d", "1mo", "3mo", "6mo", "1y", "2y", "5y", "10y", "ytd", "max"]
@@ -78,6 +80,8 @@ volatility = get_volatility(data)
 trend, difference = analyze_trend(data)
 summary = generate_summary(data)
 score, recommendation = technical_rating(data)
+support = get_support(data)
+resistance = get_resistance(data)
 
 print(f"Last Close: ${close:.2f}")
 print(f"Highest Price: ${high:.2f}")
