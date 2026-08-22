@@ -10,3 +10,5 @@ accounting, excel
 
 
 Data Analysis, Financial Analysis
+
+Futures, options, trades
